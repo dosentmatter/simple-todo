@@ -101,4 +101,15 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK && requestCode == REQUEST_EDIT_ITEM) {
+            int position = data.getIntExtra("position", -1);
+            String itemText = data.getStringExtra("itemText");
+            items.set(position, itemText);
+            itemsAdapter.notifyDataSetChanged();
+            writeItems();
+        }
+    }
 }
