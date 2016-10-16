@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                       editItemIntent.putExtra("itemText",
                                               itemsAdapter.getItem(position));
                       startActivityForResult(editItemIntent,
-                              REQUEST_EDIT_ITEM);
+                                             REQUEST_EDIT_ITEM);
                   }
               };
 
